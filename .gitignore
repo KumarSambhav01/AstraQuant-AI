@@ -1,1 +1,16 @@
 node_modules
+.pnpm-store
+
+.next
+dist
+coverage
+
+.turbo
+
+.env
+.env.*
+!.env.example
+
+.vscode/settings.json
+
+.DS_Store

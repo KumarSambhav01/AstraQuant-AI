@@ -1,5 +1,6 @@
 import { ValidationPipe } from '@nestjs/common';
 import { NestFactory } from '@nestjs/core';
+import { env } from '@astraquant/shared-config';
 
 import { AppModule } from './app.module';
 
@@ -21,10 +22,10 @@ async function bootstrap(): Promise<void> {
     }),
   );
 
-  await app.listen(process.env.PORT ?? 5000);
+  await app.listen(env.PORT);
 
   console.log(
-    `🚀 AstraQuant Backend running at http://localhost:${process.env.PORT ?? 5000}/api`,
+    `🚀 AstraQuant Backend running at http://localhost:${env.PORT}/api`,
   );
 }
 

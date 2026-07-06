@@ -27,16 +27,16 @@
     "pnpm": ">=11.5.1"
   },
   "scripts": {
-  "dev": "turbo run dev",
-  "build": "turbo run build",
-  "lint": "turbo run lint",
-  "test": "turbo run test",
-  "typecheck": "turbo run typecheck",
-  "format": "prettier --write .",
-  "format:check": "prettier --check .",
-  "clean": "turbo run clean",
-  "prepare": "echo Husky will be configured later"
-},
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "clean": "turbo run clean",
+    "prepare": "echo Husky will be configured later"
+  },
   "devDependencies": {
     "@commitlint/cli": "^21.0.2",
     "@commitlint/config-conventional": "^21.0.2",
@@ -45,6 +45,6 @@
     "lint-staged": "^17.0.7",
     "prettier": "^3.8.3",
     "turbo": "^2.9.16",
-    "typescript": "^6.0.3"
+    "typescript": "^5.9.3"
   }
 }

@@ -8,14 +8,15 @@
     "start": "next start",
     "lint": "next lint"
   },
-"dependencies": {
-  "@astraquant/shared-config": "workspace:*",
-  "@astraquant/shared-types": "workspace:*",
-  "@astraquant/shared-validation": "workspace:*",
-  "next": "16.2.7",
-  "react": "19.2.4",
-  "react-dom": "19.2.4"
-},
+  "dependencies": {
+    "@astraquant/shared-config": "workspace:*",
+    "@astraquant/shared-types": "workspace:*",
+    "@astraquant/shared-validation": "workspace:*",
+    "next": "16.2.7",
+    "react": "19.2.4",
+    "react-dom": "19.2.4",
+    "zod": "^4.4.3"
+  },
   "devDependencies": {
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",

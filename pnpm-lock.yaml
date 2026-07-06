@@ -35,6 +35,15 @@ importers:
 
   apps/backend:
     dependencies:
+      '@astraquant/shared-config':
+        specifier: workspace:*
+        version: link:../../packages/shared-config
+      '@astraquant/shared-types':
+        specifier: workspace:*
+        version: link:../../packages/shared-types
+      '@astraquant/shared-validation':
+        specifier: workspace:*
+        version: link:../../packages/shared-validation
       '@nestjs/common':
         specifier: ^11.0.1
         version: 11.1.27(class-transformer@0.5.1)(class-validator@0.15.1)(reflect-metadata@0.2.2)(rxjs@7.8.2)
@@ -129,6 +138,15 @@ importers:
 
   apps/frontend:
     dependencies:
+      '@astraquant/shared-config':
+        specifier: workspace:*
+        version: link:../../packages/shared-config
+      '@astraquant/shared-types':
+        specifier: workspace:*
+        version: link:../../packages/shared-types
+      '@astraquant/shared-validation':
+        specifier: workspace:*
+        version: link:../../packages/shared-validation
       next:
         specifier: 16.2.7
         version: 16.2.7(@babel/core@7.29.7)(react-dom@19.2.4(react@19.2.4))(react@19.2.4)

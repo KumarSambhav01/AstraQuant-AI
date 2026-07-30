@@ -3,25 +3,25 @@ import { z } from "zod";
 export const envSchema = z.object({
   NODE_ENV: z.enum(["development", "test", "production"]),
 
-  PORT: z.coerce.number().default(3000),
+  PORT: z.coerce.number().default(5000),
 
-  MONGODB_URI: z.string().min(1),
+  MONGODB_URI: z.string().optional(),
 
-  REDIS_URL: z.string().min(1),
+  REDIS_URL: z.string().optional(),
 
-  GEMINI_API_KEY: z.string().min(1),
+  GEMINI_API_KEY: z.string().optional(),
 
-  RESEND_API_KEY: z.string().min(1),
+  RESEND_API_KEY: z.string().optional(),
 
-  QDRANT_URL: z.string().url(),
+  QDRANT_URL: z.string().url().optional(),
 
-  QDRANT_API_KEY: z.string().min(1),
+  QDRANT_API_KEY: z.string().optional(),
 
-  FINNHUB_API_KEY: z.string().min(1),
+  FINNHUB_API_KEY: z.string().optional(),
 
-  INNGEST_EVENT_KEY: z.string().min(1),
+  INNGEST_EVENT_KEY: z.string().optional(),
 
-  INNGEST_SIGNING_KEY: z.string().min(1),
+  INNGEST_SIGNING_KEY: z.string().optional(),
 });
 
 export type EnvSchema = z.infer<typeof envSchema>;

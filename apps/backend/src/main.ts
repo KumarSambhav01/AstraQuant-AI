@@ -3,6 +3,7 @@ import { NestFactory } from '@nestjs/core';
 import { DocumentBuilder, SwaggerModule } from '@nestjs/swagger';
 import { env } from '@astraquant/shared-config';
 import { GlobalExceptionFilter } from './common/exceptions';
+import { ResponseInterceptor } from './common/interceptors';
 
 import { AppModule } from './app.module';
 
@@ -25,6 +26,10 @@ async function bootstrap(): Promise<void> {
   );
 
   app.useGlobalFilters(new GlobalExceptionFilter());
+
+  app.useGlobalInterceptors(
+  new ResponseInterceptor(),
+);
 
   const swaggerConfig = new DocumentBuilder()
     .setTitle('AstraQuant AI API')

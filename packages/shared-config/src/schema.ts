@@ -22,6 +22,10 @@ export const envSchema = z.object({
   INNGEST_EVENT_KEY: z.string().optional(),
 
   INNGEST_SIGNING_KEY: z.string().optional(),
+
+  JWT_ACCESS_SECRET: z.string().min(32).optional(),
+
+  JWT_REFRESH_SECRET: z.string().min(32).optional(),
 });
 
 export type EnvSchema = z.infer<typeof envSchema>;

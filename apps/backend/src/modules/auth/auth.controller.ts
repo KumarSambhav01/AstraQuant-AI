@@ -1,10 +1,11 @@
 import {
+  Body,
   Controller,
   Get,
   Post,
-  Body,
   UseGuards,
 } from '@nestjs/common';
+import { IsString, MinLength } from 'class-validator';
 import { ApiBearerAuth, ApiTags } from '@nestjs/swagger';
 
 import { AuthService } from './auth.service';
@@ -13,6 +14,12 @@ import { JwtAuthGuard } from './guards';
 import type { UserDocument } from '../users';
 import { LoginDto } from './dto/login.dto';
 import { RegisterDto } from './dto/register.dto';
+
+class RefreshTokenDto {
+  @IsString()
+  @MinLength(1)
+  refreshToken!: string;
+}
 
 @ApiTags('Authentication')
 @Controller('auth')
@@ -34,6 +41,20 @@ export class AuthController {
       dto.email,
       dto.password,
     );
+  }
+
+  @Post('refresh')
+  async refresh(@Body() dto: RefreshTokenDto) {
+    return this.authService.refresh(dto.refreshToken);
+  }
+
+  @Post('logout')
+  async logout(@Body() dto: RefreshTokenDto) {
+    await this.authService.logout(dto.refreshToken);
+
+    return {
+      message: 'Logged out successfully',
+    };
   }
 
   @Get('me')

@@ -7,7 +7,7 @@ export const envSchema = z.object({
 
   MONGODB_URI: z.string().optional(),
 
-  REDIS_URL: z.string().optional(),
+  REDIS_URL: z.string().min(1),
 
   GEMINI_API_KEY: z.string().optional(),
 
@@ -17,7 +17,7 @@ export const envSchema = z.object({
 
   QDRANT_API_KEY: z.string().optional(),
 
-  FINNHUB_API_KEY: z.string().optional(),
+  FINNHUB_API_KEY: z.string().min(1),
 
   INNGEST_EVENT_KEY: z.string().optional(),
 

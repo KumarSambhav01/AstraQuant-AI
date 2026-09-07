@@ -7,6 +7,8 @@ import { AuthModule } from './modules/auth';
 import { UserModule } from './modules/users';
 import { MarketDataModule } from './modules/market-data';
 import { CacheModule } from './infrastructure/cache';
+import { StocksModule } from './modules/stocks';
+
 @Module({
   imports: [
     LoggerModule,
@@ -16,6 +18,7 @@ import { CacheModule } from './infrastructure/cache';
     UserModule,
     AuthModule,
     MarketDataModule,
+    StocksModule,
   ],
 })
 export class AppModule {}
